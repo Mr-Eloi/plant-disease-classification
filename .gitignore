@@ -1,0 +1,35 @@
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Dataset and downloaded archives
+data/raw/
+data/train/
+data/validation/
+data/test/
+data/tfds_cache/
+
+# Runtime data
+data/predictions.db
+data/retraining/incoming/
+data/retraining/processed/
+data/retraining/experiments/
+
+# Model checkpoints and experiment artifacts
+models/best_plant_disease_model.keras
+models/optimized_plant_disease_model.keras
+models/optimized_plant_disease_model_v2.keras
+models/previous_*.keras
+
+# Keep the production model and class mapping
+# tracked in Git:
+# models/plant_disease_model.keras
+# models/class_names.json
+
+
