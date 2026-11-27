@@ -1,0 +1,27 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# Install the system library required by TensorFlow
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install API dependencies
+RUN pip install --no-cache-dir \
+    tensorflow==2.21.0 \
+    Flask==3.1.3 \
+    Flask-Cors==6.0.5 \
+    Pillow==13.0.0 \
+    gunicorn==27.0.1
+
+# Copy application source code and model files
+COPY src/ ./src/
+COPY models/ ./models/
+
+# Create the data directory
+RUN mkdir -p /app/data
+
+EXPOSE 5000
+
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "1", "--timeout", "1800", "src.api.app:app"]
