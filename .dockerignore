@@ -1,0 +1,12 @@
+venv/
+.git/
+__pycache__/
+.ipynb_checkpoints/
+data/raw/
+data/train/
+data/test/
+data/validation/
+data/tfds_cache/
+data/retraining/
+notebooks/
+*.ipynb

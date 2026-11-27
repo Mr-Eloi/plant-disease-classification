@@ -10,7 +10,7 @@ import tensorflow as tf
 
 from flask import Flask, request, jsonify
 from PIL import Image, UnidentifiedImageError
-from retraining import (
+from src.training.retraining import (
     save_labeled_image,
     get_uploaded_images,
     run_incremental_retraining
@@ -22,7 +22,7 @@ from retraining import (
 # 1. Application configuration
 # --------------------------------------------------
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parents[2]
 MODEL_DIR = BASE_DIR / "models"
 DATA_DIR = BASE_DIR / "data"
 

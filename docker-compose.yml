@@ -1,0 +1,12 @@
+services:
+  api:
+    image: plant-disease-api:1.0
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - "127.0.0.1:5001:5000"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    restart: unless-stopped
