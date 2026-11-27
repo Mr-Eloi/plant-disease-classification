@@ -188,7 +188,7 @@ if health:
 else:
     st.sidebar.error("API Offline")
     st.sidebar.caption(
-        "Start the Flask API using: python src/app.py"
+        "Start the Flask API using: python -m src.api.app"
     )
 
 

@@ -7,7 +7,7 @@ from collections import Counter
 from sklearn.model_selection import train_test_split
 
 # Project directories
-ROOT_DIR = Path(__file__).resolve().parent.parent
+ROOT_DIR = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT_DIR / "data"
 
 EXTRACTED_DIR = DATA_DIR / "tfds_cache" / "downloads" / "extracted"
